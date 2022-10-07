@@ -118,7 +118,7 @@
 
     <!-- JOINTS -->
     <!-- Alternate between revolute joints (link to virtual link) and prismatic joints (virtual link to link)-->
-    <!-- Segment lengths usually at most 1 meters (prismatic upper limit)-->
+    <!-- Segment lengths usually at most 1 meters, so use 0.5m (prismatic upper limit)-->
     <!-- Joint angles usually at most [-30, 30] degrees => [-0.5236, 0.5236] radians (revolute limits)-->
     <!-- Max growth speed is about 0.1m/s (prismatic joint velocity limit) -->
     <!-- Other efforts and velocities currently untuned -->
@@ -135,7 +135,7 @@
         <parent link="base_virtual_link"/>
         <child link="link_0"/>
         <axis xyz="1.0 0.0 0.0"/>
-        <limit lower="0.0" upper="1.0" effort="200" velocity="0.1"/>
+        <limit lower="0.0" upper="0.5" effort="200" velocity="0.1"/>
     </joint>
 
     <joint name="revolute_joint_1" type="revolute">
@@ -150,7 +150,7 @@
         <parent link="virtual_link_0"/>
         <child link="link_1"/>
         <axis xyz="1.0 0.0 0.0"/>
-        <limit lower="0.0" upper="1.0" effort="200" velocity="0.1"/>
+        <limit lower="0.0" upper="0.5" effort="200" velocity="0.1"/>
     </joint>
 
     <joint name="revolute_joint_2" type="revolute">
@@ -165,6 +165,6 @@
         <parent link="virtual_link_1"/>
         <child link="link_2"/>
         <axis xyz="1.0 0.0 0.0"/>
-        <limit lower="0.0" upper="1.0" effort="200" velocity="0.1"/>
+        <limit lower="0.0" upper="0.5" effort="200" velocity="0.1"/>
     </joint>
 </robot>
